@@ -1,0 +1,41 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #999;
+    padding: 10px;
+    background-color: white;
+}
+
+th {
+    background-color: rgb(254, 224, 228);
+}
+
+#post-table-body td:last-child {
+    display: flex;
+    justify-content: space-between;
+}
+
+#post-table-body a {
+    text-decoration: none;
+    color: darkblue;
+}
+
+#post-table-body a:hover {
+    text-decoration: underline;
+    color: rgba(42, 42, 187, 0.692);
+}
+
+#MyBlog {
+    margin-top: 20px;
+    border-bottom: solid;
+    border-width: 1px;
+    margin-bottom: 20px;
+}
+
+#createPost {
+    margin-left: 1100px;
+    margin-bottom: 10px;
+}

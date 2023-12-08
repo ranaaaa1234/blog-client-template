@@ -6,6 +6,46 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <nav id="MyBlog">
+        <a href="admin/index.html">My blog</a>
+    </nav>
+
+
+    <div id="container">
+        <h1>Handle blog posts</h1>
+
+        <nav id="CreatePost">
+            <a href="admin/index.html">Creat new post</a>
+        </nav>
+
+        <table id="post-table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Tags</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="post-table-body">
+                <!-- Blog post entries will go here -->
+                <!-- Example entry -->
+                <tr>
+                    <td>Sample Title</td>
+                    <td>John Doe</td>
+                    <td>Tech, Coding</td>
+                    <td>2023-12-05</td>
+                    <td>
+                        <a href="#">Update</a> |
+                        <a href="#">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
     <script src="js/manage-posts.js"></script>
 </body>
 </html>
