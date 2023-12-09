@@ -1,0 +1,18 @@
+#container2 {
+    border-top: solid;
+    border-width: 1px;
+    margin-top: 20px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+#AdminLink {
+    margin-left: 200px;
+    margin-right: 200px;
+
+}
+
+body {
+    background-color: rgb(254, 224, 228);
+}
+
