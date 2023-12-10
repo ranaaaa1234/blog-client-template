@@ -14,7 +14,7 @@ async function fetchAndDisplayPosts() {
                     <td>${post.tags.join(', ')}</td>
                     <td>${post.date}</td>
                     <td>
-                        <a href="#">Update</a> |
+                        <a href="#">Update</a>
                         <a href="#" data-id="${post.id}" class="delete-links">Delete</a>
                     </td>
                 </tr>
