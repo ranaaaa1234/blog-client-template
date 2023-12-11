@@ -16,13 +16,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 postsHTML += `
                     <div class="blog-post">
                         <h2>${post.title}</h2>
-                        <p><strong>Author:</strong> ${post.author}</p>
-                        <p><strong>Date:</strong> ${post.date}</p>
-                        <p>${shortContent}</p>
-                        <p><strong>Tags:</strong> ${post.tags.join(', ')}</p>
-                        <a href="#" class="read-more" data-content="${post.content}">Read more...</a>
+                        <p><strong>Author:</strong>${post.author}</p>
+                        <p>${post.date}</p>
+                        <p><strong>tags:</strong> ${post.tags.join(', ')}</p>
+                        <p id="contentPost">${shortContent}</p>
+                        <a href="#" class="read-more" data-content="${post.content}">read more...</a>
                     </div>
                 `;
+               
             }
 
             blogPostsContainer.innerHTML = postsHTML;
