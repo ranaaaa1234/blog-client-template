@@ -52,3 +52,18 @@ h1 {
     margin-right: 138px;
 }
 
+button {
+    background-color: white;
+    border: none;
+}
+
+button:hover{
+    background-color: rgb(254, 224, 228);
+}
+
+#actionLink {
+    display: flex;
+    flex-direction: column;
+}
+
+

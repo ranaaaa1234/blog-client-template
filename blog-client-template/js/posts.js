@@ -10,11 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
             let postsHTML = '';
             for (let post of posts) {
                 // Extracting first 100 characters of the post content
-                const shortContent = post.content.slice(0, 100);
+                const shortContent = post.content.slice(0, 99);
                 
                 // Creating the HTML structure for each blog post
                 postsHTML += `
-                    <div class="blog-post">
+                    <div class="blog-posts">
                         <h2>${post.title}</h2>
                         <p><strong>Author:</strong>${post.author}</p>
                         <p>${post.date}</p>
