@@ -52,18 +52,52 @@ h1 {
     margin-right: 138px;
 }
 
-button {
-    background-color: white;
-    border: none;
-}
 
 button:hover{
-    background-color: rgb(254, 224, 228);
+    opacity: 0.8;
 }
 
 #actionLink {
     display: flex;
     flex-direction: column;
+}
+
+
+#postForm {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-left: 105px;
+    margin-right: 200px;
+}
+
+#create-postPage {
+    background-color: rgb(254, 224, 228);
+}
+
+
+#postForm label {
+    margin-bottom: 0;
+    display: block; 
+}
+
+input,
+textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #333;
+}
+
+textarea {
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #333;
 }
 
 

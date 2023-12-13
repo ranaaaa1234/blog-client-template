@@ -5,8 +5,30 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <h1>This page is required for the VG grade</h1>
+<body id="create-postPage">
+
+    <div id="content3"> 
+    <a id="MyBlog" href="index.html">My blog</a>
+    <h1>New post</h1>
+
+    <form id="postForm">
+        <label for="title">Title</label><br>
+        <textarea name="title" id="ttile" cols="30" rows="2"></textarea>
+
+        <label for="author">Author</label><br>
+        <textarea name="author" id="author" cols="30" rows="2"></textarea>
+
+        <label for="postContent">Content</label><br>
+        <textarea name="content" id="postContent" cols="30" rows="10"></textarea>
+
+        <label for="tags">Tags</label><br>
+        <textarea name="tags" id="tags" cols="30" rows="4"></textarea>
+
+        <button>create</button>
+            <a href="index.html">&#x2190; back</a>
+      
+      </form>
+    </div>
 
     <script src="js/create-post.js"></script>
 </body>

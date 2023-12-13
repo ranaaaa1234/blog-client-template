@@ -1,51 +1,55 @@
-async function fetchAndDisplayPosts() {
+// Fetch puns and populate the table
+async function fetchAllPuns() {
     try {
         const response = await fetch('https://blog-api-assignment.up.railway.app/posts');
-        const posts = await response.json();
+        const puns = await response.json();
 
-        let postsTableHTML = '';
-        for (let post of posts) {
-            postsTableHTML += `
+        let punsTableHTML = "";
+        for (let pun of puns) {
+            let punDate = new Date(pun.date);
+
+            punsTableHTML += `
                 <tr>
-                    <td>${post.title}</td>
-                    <td>${post.author}</td>
-                    <td>${post.tags.join(', ')}</td>
-                    <td>${post.date}</td>
+                    <td>${pun.content}</td>
+                    <td>${pun.author}</td>
+                    <td>${pun.tags.join(', ')}</td>
+                    <td>${punDate.toISOString().split('T')[0]}</td>
                     <td>
-                        <button id="update-${post.id}">Update</button>
-                        <button id="delete-${post.id}" class="delete-links">Delete</button>
+                        <a href="update-pun.html?id=${pun._id}">Update</a> |
+                        <a href="#" data-id="${pun._id}" class="delete-links">Delete</a> 
                     </td>
                 </tr>
             `;
         }
 
-        document.getElementById('post-table-body').innerHTML = postsTableHTML;
+        document.getElementById('post-table-body').innerHTML = punsTableHTML;
 
-        // Add event listeners to delete links
+        // Event listener to delete puns
         const deleteLinks = document.querySelectorAll('.delete-links');
         deleteLinks.forEach(link => {
             link.addEventListener('click', async (e) => {
                 e.preventDefault();
-                const postId = e.target.id.split('-')[1]; // Extracting postId from the button id
-
+                const punId = e.target.dataset.id;
+                
                 try {
-                    const deleteResponse = await fetch(`https://blog-api-assignment.up.railway.app/posts/${postId}`, {
+                    const response = await fetch(`https://blog-api-assignment.up.railway.app/posts${punId}`, {
                         method: 'DELETE'
                     });
 
-                    if (deleteResponse.ok) {
+                    if (response.ok) {
                         e.target.closest('tr').remove();
                     } else {
-                        throw new Error('Could not delete the blog post');
+                        throw new Error('Could not delete pun');
                     }
                 } catch (error) {
                     console.error('Error:', error);
                 }
             });
         });
-    } catch (error) {
-        console.error('Error fetching blog posts:', error);
+    } catch(error) {
+        console.error(error);
     }
 }
 
-fetchAndDisplayPosts();
+// Call the function to fetch and populate the table
+fetchAllPuns();
