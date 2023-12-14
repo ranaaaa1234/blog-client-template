@@ -6,10 +6,15 @@
     margin-right: 138px;
 }
 
-#AdminLink {
+#AdminLink a {
     margin-left: 105px;
     margin-right: 138px;
+    text-decoration: none;
+}
 
+#AdminLink a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
 }
 
 body {

@@ -20,16 +20,6 @@ th {
     justify-content: space-between;
 }
 
-#post-table-body a {
-    text-decoration: none;
-    color: darkblue;
-}
-
-#post-table-body a:hover {
-    text-decoration: underline;
-    color: rgba(42, 42, 187, 0.692);
-}
-
 #MyBlog {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -81,22 +71,20 @@ label,
     margin-left: 105px;
 }
 
-#backLink {
+#backLink a,
+#MyBlog a,
+#CreatePost a {
     text-decoration: none;
 }
 
-form a {
-    width: 100%;
-    display: block;
-    text-align: center;
-    text-decoration: none;
-    color: darkblue;
-}
-
-form a:hover {
+#backLink a:hover,
+#MyBlog a:hover,
+#CreatePost a:hover {
     text-decoration: underline;
-    color: rgba(42, 42, 187, 0.692);
+    opacity: 0.8;
+
 }
+
 
 #create-postPage {
     background-color: rgb(254, 224, 228);
