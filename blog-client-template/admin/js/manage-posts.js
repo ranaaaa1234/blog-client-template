@@ -16,7 +16,7 @@ async function fetchAndDisplayPosts() {
                     <td>${pun.tags}</td>
                     <td>${punDate.getFullYear()}-${punDate.getMonth() + 1}-${punDate.getDate()} ${punDate.toLocaleTimeString()}</td>
                     <td>
-                        <button class="update-btn" data-id="${pun._id}">Update</button>
+                        <button id="update-btn" data-id="${pun._id}">Update</button>
                         <button class="delete-btn" data-id="${pun._id}">Delete</button>
                     </td>
                 </tr>
@@ -40,7 +40,23 @@ async function fetchAndDisplayPosts() {
                 }
             });
         }
+
+        const updateButtons = document.querySelectorAll('#update-btn');
+        updateButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                
+                const punId = button.dataset.id;
+                window.location.href = `update-post.html?id=${punId}`;
+            });
+        });
+
     } catch (error) {
         console.log(error);
     }
+
 }
+
+
+
+
+

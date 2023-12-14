@@ -87,20 +87,23 @@ input {
 }
 
 label,
-#backLink {
+#backLink,
+#back2 {
     margin-left: 170px;
    
 }
 
 #backLink a,
 #MyBlog a,
-#CreatePost a {
+#CreatePost a,
+#back2 a {
     text-decoration: none;
 }
 
 #backLink a:hover,
 #MyBlog a:hover,
-#CreatePost a:hover {
+#CreatePost a:hover,
+#back2 a:hover {
     text-decoration: underline;
     opacity: 0.8;
 

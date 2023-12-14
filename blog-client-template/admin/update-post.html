@@ -4,10 +4,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>This page is required for the VG grade</h1>
+    <h1 id="updatePost">Update Post</h1>
+
+    <form id="updatePostForm">
+        <label for="title">Title</label><br>
+        <input type="text" id="title" name="title"><br><br>
+
+        <label for="author">Author</label><br>
+        <input type="text" id="author" name="author"><br><br>
+
+        <label for="content">Content</label><br>
+        <textarea id="content" name="content" rows="8" cols="40"></textarea><br><br>
+
+        <label for="tags">Tags</label><br>
+        <select id="tags" name="tags">
+            <option value="Fotball">Fotball</option>
+            <option value="Animals">Animals</option>
+            <option value="Food">Food</option>
+            <option value="Travel">Travel</option>
+            <option value="custom">Add my own tag</option>
+        </select><br><br>
+
+        <!-- Input field for adding custom tag -->
+        <input type="text" id="customTagInput" name="customTag" placeholder="Enter your tag" style="display: none;"><br><br>
+
+        <input type="submit" value="Update post">
+    </form>
+
+<nav id="back2" > 
+    <a href="index.html">&#8592; back</a>
+</nav>
 
     <script src="js/update-post.js"></script>
 </body>
 </html>
+
+
