@@ -21,6 +21,16 @@ body {
     background-color: rgb(254, 224, 228);
 }
 
+#read-more a {
+    text-decoration: none;
+}
+
+.blog-post {
+    border-top: 1px solid;
+    padding-bottom: 20px; 
+}
+
+
 
 
 

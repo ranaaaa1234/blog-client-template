@@ -1,5 +1,3 @@
-// manage-posts.js
-
 document.addEventListener('DOMContentLoaded', fetchAndDisplayPosts);
 
 async function fetchAndDisplayPosts() {
@@ -15,7 +13,7 @@ async function fetchAndDisplayPosts() {
                 <tr>
                     <td>${pun.title}</td>
                     <td>${pun.author}</td>
-                    <td>${pun.tags.join(', ')}</td>
+                    <td>${pun.tags}</td>
                     <td>${punDate.getFullYear()}-${punDate.getMonth() + 1}-${punDate.getDate()} ${punDate.toLocaleTimeString()}</td>
                     <td>
                         <button class="update-btn" data-id="${pun._id}">Update</button>
