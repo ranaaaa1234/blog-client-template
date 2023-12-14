@@ -1,46 +1,29 @@
-document.getElementById('postForm').addEventListener('submit', createPost);
+document.getElementById('createPostForm').addEventListener('submit', async function(event) {
+    event.preventDefault();
 
-
-async function createPost(e) {
-  e.preventDefault();
-  let form = e.target;
-
-
-  try {
-    let formData = new FormData(form)
-    data = {"content": formData.get('content')};
-
-    await fetch('https://blog-api-assignment.up.railway.app/posts', {
-      method: "POST", // GET, POST, PATCH, DELETE, etc.
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(data)
+    const formData = new FormData(this);
+    const postData = {};
+    formData.forEach((value, key) => {
+        postData[key] = value;
     });
 
+    try {
+        const response = await fetch('https://blog-api-assignment.up.railway.app/posts', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(postData)
+        });
 
-    location.replace('index.html');
-
-  } catch(error) {
-      console.log(error)
-  } 
-}
-
-let serializeForm = function (form) {
-    var obj = {};
-    var formData = new FormData(form);
-    // console.log(formData.getAll());
-
-    for (var key of formData.keys()) {
-        let inputData = formData.getAll(key);
-
-        if (inputData.length > 1) {
-            obj[key] = inputData;
+        if (response.ok) {
+            alert('Post created successfully!');
+            window.location.href = 'index.html';
         } else {
-            obj[key] = inputData[0];    
+            throw new Error('Failed to create post.');
         }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Failed to create post. Please try again.');
     }
-    
-    // console.log(obj);
-    return obj;
-};
+});

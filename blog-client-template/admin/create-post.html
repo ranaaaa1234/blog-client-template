@@ -5,30 +5,30 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body id="create-postPage">
+<body>
+    <h1>Create New Post</h1>
 
-    <div id="content3"> 
-    <a id="MyBlog" href="index.html">My blog</a>
-    <h1>New post</h1>
+    <form id="createPostForm">
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title"><br><br>
 
-    <form id="postForm">
-        <label for="title">Title</label><br>
-        <textarea name="title" id="ttile" cols="30" rows="2"></textarea>
+        <label for="author">Author:</label><br>
+        <input type="text" id="author" name="author"><br><br>
 
-        <label for="author">Author</label><br>
-        <textarea name="author" id="author" cols="30" rows="2"></textarea>
+        <label for="content">Content:</label><br>
+        <textarea id="content" name="content" rows="8" cols="40"></textarea><br><br>
 
-        <label for="postContent">Content</label><br>
-        <textarea name="content" id="postContent" cols="30" rows="10"></textarea>
+        <label for="tags">Tags:</label><br>
+        <select id="tags" name="tags">
+            <option value="tag1">Tag 1</option>
+            <option value="tag2">Tag 2</option>
+            <!-- Add other tag options here -->
+        </select><br><br>
 
-        <label for="tags">Tags</label><br>
-        <textarea name="tags" id="tags" cols="30" rows="4"></textarea>
+        <input type="submit" value="Create Post">
+    </form>
 
-        <button>create</button>
-            <a href="index.html">&#x2190; back</a>
-      
-      </form>
-    </div>
+    <a href="index.html">back</a>
 
     <script src="js/create-post.js"></script>
 </body>

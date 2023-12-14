@@ -1,5 +1,8 @@
-// Fetch puns and populate the table
-async function fetchAllPuns() {
+// manage-posts.js
+
+document.addEventListener('DOMContentLoaded', fetchAndDisplayPosts);
+
+async function fetchAndDisplayPosts() {
     try {
         const response = await fetch('https://blog-api-assignment.up.railway.app/posts');
         const puns = await response.json();
@@ -13,10 +16,10 @@ async function fetchAllPuns() {
                     <td>${pun.content}</td>
                     <td>${pun.author}</td>
                     <td>${pun.tags.join(', ')}</td>
-                    <td>${punDate.toISOString().split('T')[0]}</td>
+                    <td>${punDate.getFullYear()}-${punDate.getMonth() + 1}-${punDate.getDate()} ${punDate.toLocaleTimeString()}</td>
                     <td>
-                        <a href="update-pun.html?id=${pun._id}">Update</a> |
-                        <a href="#" data-id="${pun._id}" class="delete-links">Delete</a> 
+                        <button class="update-btn" data-id="${pun._id}">Update</button>
+                        <button class="delete-btn" data-id="${pun._id}">Delete</button>
                     </td>
                 </tr>
             `;
@@ -24,32 +27,22 @@ async function fetchAllPuns() {
 
         document.getElementById('post-table-body').innerHTML = punsTableHTML;
 
-        // Event listener to delete puns
-        const deleteLinks = document.querySelectorAll('.delete-links');
-        deleteLinks.forEach(link => {
-            link.addEventListener('click', async (e) => {
+        // Add event listeners to delete buttons
+        const deleteButtons = document.getElementsByClassName('delete-btn');
+        for (let button of deleteButtons) {
+            button.addEventListener('click', async function (e) {
                 e.preventDefault();
-                const punId = e.target.dataset.id;
-                
-                try {
-                    const response = await fetch(`https://blog-api-assignment.up.railway.app/posts${punId}`, {
-                        method: 'DELETE'
-                    });
+                let punId = e.target.dataset.id;
+                let response = await fetch(`https://blog-api-assignment.up.railway.app/posts/${punId}`, {
+                    method: 'DELETE'
+                });
 
-                    if (response.ok) {
-                        e.target.closest('tr').remove();
-                    } else {
-                        throw new Error('Could not delete pun');
-                    }
-                } catch (error) {
-                    console.error('Error:', error);
+                if (response.ok) {
+                    e.target.parentNode.parentNode.remove();
                 }
             });
-        });
-    } catch(error) {
-        console.error(error);
+        }
+    } catch (error) {
+        console.log(error);
     }
 }
-
-// Call the function to fetch and populate the table
-fetchAllPuns();
