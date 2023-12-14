@@ -1,7 +1,7 @@
 table {
-    width: 80%;
-    margin-left: 105px;
-    margin-right: 200px;
+    width: 72%;
+    margin-left: 170px;
+    margin-right: 170px;
     border-collapse: collapse;
 }
 
@@ -10,9 +10,11 @@ th, td {
     padding: 10px;
     background-color: white;
 }
-
+body {
+    background-color: rgb(232, 222, 216);
+}
 th {
-    background-color: rgb(254, 224, 228);
+    background-color: rgb(132, 106, 106);
 }
 
 #post-table-body td:last-child {
@@ -21,30 +23,47 @@ th {
 }
 
 #MyBlog {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 105px;
-    margin-right: 200px;
+    margin-left: 170px;
+    margin-right: 170px;
+    padding: 10px;
+    background-color: rgb(132, 106, 106);
+}
+
+#MyBlog a {
+    margin-left: 780px;
+    color: black;
 }
 
 #CreatePost {
-    margin-left: 970px;
+    margin-left: 930px;
     margin-bottom: 10px;
-    margin-right: 100px;
 }
 
-h1 {
+h1,
+#newPostTitle {
     border-top: solid;
+    border-bottom: solid;
     border-width: 1px;
     margin-top: 20px;
-    padding-top: 15px;
-    margin-left: 105px;
-    margin-right: 138px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 170px;
+    margin-right: 170px;
 }
 
 
 button:hover{
     opacity: 0.8;
+}
+
+button {
+    border: none;
+    background-color: white;
+}
+
+.update-btn {
+    border-right: solid;
+    border-width: 1px;
 }
 
 #actionLink {
@@ -55,8 +74,9 @@ button:hover{
 input,
 textarea,
 select {
-    width: 80%;
-    margin-left: 105px;
+    width: 72%;
+    margin-left: 170px;
+    margin-right: 170px;
     margin-bottom: 10px;
     border-radius: 5px;
     border: 1px solid #333;
@@ -68,7 +88,8 @@ input {
 
 label,
 #backLink {
-    margin-left: 105px;
+    margin-left: 170px;
+   
 }
 
 #backLink a,
@@ -85,11 +106,14 @@ label,
 
 }
 
-
 #create-postPage {
-    background-color: rgb(254, 224, 228);
+    background-color: rgb(232, 222, 216);
 }
 
+h1,
+#newPostTitle {
+    font-family: 'ABeeZee', sans-serif;
+}
 
 
 

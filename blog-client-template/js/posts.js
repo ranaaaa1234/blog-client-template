@@ -8,25 +8,30 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             let postsHTML = '';
             for (let post of posts) {
-                const shortContent = post.content.slice(0, 100);
-                const fullContent = post.content;
+                let shortContent = '';
+                let fullContent = '';
+
+                if (post.content && typeof post.content === 'string') {
+                    shortContent = post.content.length > 100 ? post.content.slice(0, 100) : post.content;
+                    fullContent = post.content;
+                }
 
                 postsHTML += `
-                <div class="blog-post">
-                <h2>${post.title}</h2>
-                <p><strong>Author</strong> ${post.author}</p>
-                <p>${post.date}</p>
-                <p><strong>Tags</strong> ${post.tags}</p>
-                <p class="content">${shortContent}</p>
-                <a href="post.html?id=${post.id}" class="read-more" data-full-content="${fullContent}">read more...</a>
-            </div>
+                    <div class="blog-post">
+                        <h2>${post.title}</h2>
+                        <p><strong>Author:</strong> ${post.author}</p>
+                        <p>${post.date}</p>
+                        <p><strong>Tags:</strong> ${post.tags}</p>
+                        <p class="content">${shortContent}</p>
+                        <a href="post.html" class="read-more" data-full-content="${fullContent}">read more...</a>
+                    </div>
                 `;
             }
 
             // Append the generated HTML content to the blogPostsContainer
             blogPostsContainer.innerHTML = postsHTML;
 
-         }catch (error) {
+         } catch (error) {
             console.error('Error fetching blog posts:', error);
         }
     }

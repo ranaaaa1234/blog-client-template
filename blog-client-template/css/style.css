@@ -2,14 +2,31 @@
     border-top: solid;
     border-width: 1px;
     margin-top: 20px;
-    margin-left: 105px;
-    margin-right: 138px;
+    margin-left: 170px;
+    margin-right: 170px;
+}
+
+#adminLink {
+    background-color: rgb(132, 106, 106);
+    padding: 10px;
+    margin-left: 170px;
+    margin-right: 170px;
+}
+
+body {
+    background-color: rgb(232, 222, 216);
+}
+
+h1 {
+    font-family: 'ABeeZee', sans-serif;
+    
 }
 
 #AdminLink a {
-    margin-left: 105px;
-    margin-right: 138px;
+    margin-left: 780px;
+    margin-right: 0px;
     text-decoration: none;
+    color: black;
 }
 
 #AdminLink a:hover {
@@ -17,18 +34,15 @@
     text-decoration: underline;
 }
 
-body {
-    background-color: rgb(254, 224, 228);
-}
-
-#read-more a {
+.read-more a {
     text-decoration: none;
 }
 
 .blog-post {
-    border-top: 1px solid;
+    border-top: 1px dotted;
     padding-bottom: 20px; 
 }
+
 
 
 
