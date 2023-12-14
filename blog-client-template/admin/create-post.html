@@ -5,30 +5,35 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body id="create-Postpage">
     <h1>Create New Post</h1>
 
     <form id="createPostForm">
-        <label for="title">Title:</label><br>
+        <label for="title">Title</label><br>
         <input type="text" id="title" name="title"><br><br>
 
-        <label for="author">Author:</label><br>
+        <label for="author">Author</label><br>
         <input type="text" id="author" name="author"><br><br>
 
-        <label for="content">Content:</label><br>
+        <label for="content">Content</label><br>
         <textarea id="content" name="content" rows="8" cols="40"></textarea><br><br>
 
-        <label for="tags">Tags:</label><br>
+        <label for="tags">Tags</label><br>
         <select id="tags" name="tags">
-            <option value="tag1">Tag 1</option>
-            <option value="tag2">Tag 2</option>
-            <!-- Add other tag options here -->
+            <option value="tag1">Fotball</option>
+            <option value="tag2">Animals</option>
+            <option value="tag3">Food</option>
+            <option value="tag4">Travel</option>
+            <option value="custom">Add my own tag</option>
         </select><br><br>
+
+        <!-- Input field for adding custom tag -->
+        <input type="text" id="customTagInput" name="customTag" placeholder="Enter your tag" style="display: none;"><br><br>
 
         <input type="submit" value="Create Post">
     </form>
 
-    <a href="index.html">back</a>
+    <a id="backLink" href="index.html">&#8592;back</a>
 
     <script src="js/create-post.js"></script>
 </body>

@@ -37,7 +37,7 @@ th {
     margin-right: 200px;
 }
 
-#createPost {
+#CreatePost {
     margin-left: 970px;
     margin-bottom: 10px;
     margin-right: 100px;
@@ -62,13 +62,40 @@ button:hover{
     flex-direction: column;
 }
 
-
-#postForm {
-    display: flex;
-    flex-direction: column;
+input,
+textarea,
+select {
     width: 80%;
     margin-left: 105px;
-    margin-right: 200px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #333;
+}
+
+input {
+    padding: 10px;
+}
+
+label,
+#backLink {
+    margin-left: 105px;
+}
+
+#backLink {
+    text-decoration: none;
+}
+
+form a {
+    width: 100%;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: darkblue;
+}
+
+form a:hover {
+    text-decoration: underline;
+    color: rgba(42, 42, 187, 0.692);
 }
 
 #create-postPage {
@@ -76,28 +103,7 @@ button:hover{
 }
 
 
-#postForm label {
-    margin-bottom: 0;
-    display: block; 
-}
 
-input,
-textarea {
-    width: 100%;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: 1px solid #333;
-}
 
-textarea {
-    margin-bottom: 10px;
-    margin-top: 0;
-}
-
-button {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #333;
-}
 
 

@@ -13,7 +13,7 @@ async function fetchAndDisplayPosts() {
 
             punsTableHTML += `
                 <tr>
-                    <td>${pun.content}</td>
+                    <td>${pun.title}</td>
                     <td>${pun.author}</td>
                     <td>${pun.tags.join(', ')}</td>
                     <td>${punDate.getFullYear()}-${punDate.getMonth() + 1}-${punDate.getDate()} ${punDate.toLocaleTimeString()}</td>
