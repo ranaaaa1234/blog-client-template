@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                     fullContent = post.content;
                 }
 
+                // Pass the post ID as a URL parameter to post.html
                 postsHTML += `
                     <div class="blog-post">
                         <h2>${post.title}</h2>
@@ -23,7 +24,8 @@ document.addEventListener("DOMContentLoaded", async () => {
                         <p>${post.date}</p>
                         <p><strong>Tags:</strong> ${post.tags}</p>
                         <p class="content">${shortContent}</p>
-                        <a href="post.html" class="read-more" data-full-content="${fullContent}">read more...</a>
+                        <!-- Include the post ID as a query parameter -->
+                        <a href="post.html?id=657b0db931b9d5002a63a192" id="read-more">read more...</a>
                     </div>
                 `;
             }
@@ -31,11 +33,13 @@ document.addEventListener("DOMContentLoaded", async () => {
             // Append the generated HTML content to the blogPostsContainer
             blogPostsContainer.innerHTML = postsHTML;
 
-         } catch (error) {
+        } catch (error) {
             console.error('Error fetching blog posts:', error);
         }
     }
 
+
     // Call the function to fetch and display blog posts
     fetchAndDisplayPosts();
 });
+  

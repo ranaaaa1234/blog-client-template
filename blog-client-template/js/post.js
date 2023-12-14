@@ -1,11 +1,7 @@
 document.addEventListener("DOMContentLoaded", async () => {
-    // Get the query parameters from the URL
-    const params = new URLSearchParams(window.location.search);
-
-    // Retrieve the 'id' parameter from the URL
-    const postId = params.get('id');
+    const postId = new URLSearchParams(window.location.search).get('id');
     
-    if (postId) { // Check if 'id' parameter exists
+    if (postId) {
         try {
             // Fetch the specific post using its ID from the API
             const response = await fetch(`https://blog-api-assignment.up.railway.app/posts/${postId}`);
@@ -14,9 +10,8 @@ document.addEventListener("DOMContentLoaded", async () => {
             // Create HTML content for the post details
             const postContent = `
                 <h2>${post.title}</h2>
-                <p><strong>Author</strong> ${post.author}</p>
+                <p><strong>Author</strong>: ${post.author}</p>
                 <p>${post.date}</p>
-                <p><strong>Tags</strong> ${post.tags}</p>
                 <p class="content">${post.content}</p>
             `;
 
