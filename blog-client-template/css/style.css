@@ -6,7 +6,8 @@
     margin-right: 170px;
 }
 
-#adminLink {
+#adminLink,
+#adminLink2 {
     background-color: rgb(132, 106, 106);
     padding: 10px;
     margin-left: 170px;
@@ -19,19 +20,20 @@ body {
 
 h1 {
     font-family: 'ABeeZee', sans-serif;
-    
 }
 
-#AdminLink a {
+#adminLink a,
+#adminLink2 a {
     margin-left: 780px;
     margin-right: 0px;
     text-decoration: none;
     color: black;
 }
 
-#AdminLink a:hover {
-    opacity: 0.8;
+#adminLink a:hover,
+#adminLink2 a:hover {
     text-decoration: underline;
+    opacity: 0.8;
 }
 
 .read-more a {
