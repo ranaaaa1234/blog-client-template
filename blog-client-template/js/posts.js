@@ -1,13 +1,18 @@
 document.addEventListener("DOMContentLoaded", async () => {
+    // Get the container where blog posts will be displayed
     const blogPostsContainer = document.getElementById('blog-posts');
 
+    // Function to fetch and display blog posts
     async function fetchAndDisplayPosts() {
         try {
+            // Fetch blog posts from the API
             const response = await fetch('https://blog-api-assignment.up.railway.app/posts');
             const posts = await response.json();
 
             let postsHTML = '';
+            // Loop through each post and generate HTML content
             for (let post of posts) {
+                // Extract a short content and full content for preview
                 let shortContent = '';
                 let fullContent = '';
 
@@ -16,7 +21,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                     fullContent = post.content;
                 }
 
-                // Pass the post ID as a URL parameter to post.html
+                // Create HTML elements for each post
                 postsHTML += `
                     <div class="blog-post">
                         <h2>${post.title}</h2>
@@ -30,28 +35,24 @@ document.addEventListener("DOMContentLoaded", async () => {
                 `;
             }
 
-            // Append the generated HTML content to the blogPostsContainer
+            // Display the generated HTML content within the container
             blogPostsContainer.innerHTML = postsHTML;
 
+            // Add event listeners to "Read More" buttons for each post
             const readMore = document.querySelectorAll('#read-more');
             readMore.forEach(button => {
-            button.addEventListener('click', () => {
-        
-            const postId = button.dataset.id;
-            window.location.href = `post.html?id=${postId}`;
-    });
-});
-
+                button.addEventListener('click', () => {
+                    // Redirect to the full post using the post ID as a query parameter
+                    const postId = button.dataset.id;
+                    window.location.href = `post.html?id=${postId}`;
+                });
+            });
 
         } catch (error) {
             console.error('Error fetching blog posts:', error);
         }
     }
 
-
-    // Call the function to fetch and display blog posts
+    // Fetch and display the blog posts when the DOM content is loaded
     fetchAndDisplayPosts();
 });
-
-
-  

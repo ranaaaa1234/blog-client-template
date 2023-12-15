@@ -6,7 +6,7 @@ table {
 }
 
 th, td {
-    border: 1px solid #999;
+    border: 1px solid #717171;
     padding: 10px;
     background-color: white;
 }
@@ -14,7 +14,7 @@ body {
     background-color: rgb(232, 222, 216);
 }
 th {
-    background-color: rgb(132, 106, 106);
+    background-color: rgb(187, 176, 176);
 }
 
 #post-table-body td:last-child {
