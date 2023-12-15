@@ -37,14 +37,20 @@ document.getElementById('createPostForm').addEventListener('submit', async funct
 
 });
 
-    //custom tag input field
-    const tagsSelect = document.getElementById('tags');
-    const customTagInput = document.getElementById('customTagInput');
+ // custom tag input field
+const tagsSelect = document.getElementById('tags');
+const customTagInput = document.getElementById('customTagInput');
+
+tagsSelect.addEventListener('change', () => {
     // Show/hide the custom tag input field based on the selected option
-    tagsSelect.addEventListener('change', () => {
-        if (tagsSelect.value === 'custom') {
-            customTagInput.style.display = 'block';
-        } else {
-            customTagInput.style.display = 'none';
-        }
-    });
+    const selectedOption = tagsSelect.value;
+
+    // Check if the selected option is not a pre-defined one
+    const predefinedOptions = ['Food', 'Travel', 'Fotball', 'Animals']; // predefined options 
+    if (!predefinedOptions.includes(selectedOption)) {
+        customTagInput.style.display = 'block';
+    } else {
+        customTagInput.style.display = 'none';
+    }
+});
+

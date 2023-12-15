@@ -75,13 +75,17 @@ function updatePost(e) {
     });
 }
 
-// custom tag inout field
+// custom tag input field
 const tagsSelect = document.getElementById('tags');
 const customTagInput = document.getElementById('customTagInput');
 
 tagsSelect.addEventListener('change', () => {
     // Show/hide the custom tag input field based on the selected option
-    if (tagsSelect.value === 'custom') {
+    const selectedOption = tagsSelect.value;
+
+    // Check if the selected option is not a pre-defined one
+    const predefinedOptions = ['Food', 'Travel', 'Fotball', 'Animals']; //predefined options 
+    if (!predefinedOptions.includes(selectedOption)) {
         customTagInput.style.display = 'block';
     } else {
         customTagInput.style.display = 'none';

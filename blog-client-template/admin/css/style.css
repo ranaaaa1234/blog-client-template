@@ -54,6 +54,8 @@ h1,
 
 button:hover{
     opacity: 0.8;
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 button {
@@ -61,9 +63,11 @@ button {
     background-color: white;
 }
 
-.update-btn {
+#update-btn {
     border-right: solid;
     border-width: 1px;
+    padding-right: 15px;
+    
 }
 
 #actionLink {
@@ -119,6 +123,22 @@ h1,
 }
 
 
+#table th:nth-child(1), #table td:nth-child(1) {
+    width: 29%; 
+}
+#table th:nth-child(2), #table td:nth-child(2) {
+    width: 20%; 
+}
+#table th:nth-child(3), #table td:nth-child(3) {
+    width: 15%; 
+}
+#table th:nth-child(4), #table td:nth-child(4) {
+    width: 10%; 
+}
 
-
+#table td {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden; 
+}
 

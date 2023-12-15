@@ -30,15 +30,34 @@ h1 {
     color: black;
 }
 
-#adminLink a:hover,
-#adminLink2 a:hover {
-    text-decoration: underline;
-    opacity: 0.8;
-}
-
-.read-more a {
+#backBtn a {
     text-decoration: none;
 }
+
+#adminLink a:hover,
+#adminLink2 a:hover,
+#read-more:hover,
+#backBtn a:hover,
+#read-more:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+#read-more:active {
+    color: red;
+}
+
+#read-more {
+    border: none;
+    background-color: rgb(232, 222, 216);
+    background: none;
+    color: rgb(82, 21, 122);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+    padding-left: 0;
+}
+
 
 .blog-post {
     border-top: 1px dotted;
