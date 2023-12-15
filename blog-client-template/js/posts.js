@@ -25,13 +25,23 @@ document.addEventListener("DOMContentLoaded", async () => {
                         <p><strong>Tags:</strong> ${post.tags}</p>
                         <p class="content">${shortContent}</p>
                         <!-- Include the post ID as a query parameter -->
-                        <a href="post.html?id=657b0db931b9d5002a63a192" id="read-more">read more...</a>
+                        <button id="read-more" data-id="${post._id}">read more...</button>
                     </div>
                 `;
             }
 
             // Append the generated HTML content to the blogPostsContainer
             blogPostsContainer.innerHTML = postsHTML;
+
+            const readMore = document.querySelectorAll('#read-more');
+            readMore.forEach(button => {
+            button.addEventListener('click', () => {
+        
+            const postId = button.dataset.id;
+            window.location.href = `post.html?id=${postId}`;
+    });
+});
+
 
         } catch (error) {
             console.error('Error fetching blog posts:', error);
@@ -42,4 +52,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Call the function to fetch and display blog posts
     fetchAndDisplayPosts();
 });
+
+
   
