@@ -1,30 +1,25 @@
 #container {
-    border-top: solid;
-    border-width: 1px;
-    margin-top: 20px;
-    margin-left: 170px;
-    margin-right: 170px;
+    margin-top: 30px;
+    margin-left: 130px;
+    margin-right: 130px;
 }
 
 #adminLink,
 #adminLink2 {
     background-color: rgb(132, 106, 106);
     padding: 10px;
-    margin-left: 170px;
-    margin-right: 170px;
-}
-
-body {
-    background-color: rgb(232, 222, 216);
+    margin-left: 130px;
+    margin-right: 130px;
 }
 
 h1 {
     font-family: 'ABeeZee', sans-serif;
+    text-align: center;
 }
 
 #adminLink a,
 #adminLink2 a {
-    margin-left: 780px;
+    margin-left: 860px;
     margin-right: 0px;
     text-decoration: none;
     color: black;
@@ -36,36 +31,30 @@ h1 {
 
 #adminLink a:hover,
 #adminLink2 a:hover,
-#read-more:hover,
-#backBtn a:hover,
-#read-more:hover {
+#backBtn a:hover {
     text-decoration: underline;
     opacity: 0.8;
     cursor: pointer;
 }
 
-#read-more:active {
-    color: red;
+.blog-post {
+    padding: 70px;
+    margin: 50px;
+    width: calc(40% - 20px);
+    box-sizing: border-box;
+    display: inline-block;
+    background-image: url('https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v795-tang-11.png?auto=&bg=transparent&con=3&cs=srgb&dpr=1&fm=png&ixlib=php-3.1.0&mark=rawpixel-watermark.png&markalpha=90&markpad=13&markscale=10&markx=25&q=75&usm=15&vib=3&w=1400&s=0fe2fea276c56f719260c0f2cbb36d18');
+    background-size: cover; /* Cover the entire container with the image */
+    background-position: center; /* Center the image */
+    font-family: 'Indie Flower', cursive;
+   
+}
+
+.blog-post:hover {
+    opacity: 0.8;
+    cursor: pointer;
 }
 
 #read-more {
-    border: none;
-    background-color: rgb(232, 222, 216);
-    background: none;
-    color: rgb(82, 21, 122);
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 14px;
-    padding-left: 0;
+    font-size: 10px;
 }
-
-
-.blog-post {
-    border-top: 1px dotted;
-    padding-bottom: 20px; 
-}
-
-
-
-
-
-

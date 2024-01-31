@@ -30,17 +30,17 @@ document.addEventListener("DOMContentLoaded", async () => {
                         <p><strong>Tags:</strong> ${post.tags}</p>
                         <p class="content">${shortContent}</p>
                         <!-- Include the post ID as a query parameter -->
-                        <button id="read-more" data-id="${post._id}">read more...</button>
+                        <p id="read-more" data-id="${post._id}">...click to read more</p>
                     </div>
                 `;
             }
 
             // Display the generated HTML content within the container
             blogPostsContainer.innerHTML = postsHTML;
-
+    
             // Add event listeners to "Read More" buttons for each post
-            const readMore = document.querySelectorAll('#read-more');
-            readMore.forEach(button => {
+            const blogPosts = document.querySelectorAll('#blog-posts');
+            blogPosts.forEach(button => {
                 button.addEventListener('click', () => {
                     // Redirect to the full post using the post ID as a query parameter
                     const postId = button.dataset.id;
@@ -56,3 +56,4 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Fetch and display the blog posts when the DOM content is loaded
     fetchAndDisplayPosts();
 });
+
